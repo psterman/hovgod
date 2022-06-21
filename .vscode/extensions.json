@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "evan-buss.font-switcher"
+        "evan-buss.font-switcher",
+        "WakaTime.vscode-wakatime"
     ]
 }

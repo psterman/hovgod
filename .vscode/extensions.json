@@ -1,6 +1,8 @@
 {
     "recommendations": [
         "evan-buss.font-switcher",
-        "WakaTime.vscode-wakatime"
+        "wakatime.vscode-wakatime",
+        "ms-vscode.live-server",
+        "higakinn.vscode-to-notion"
     ]
 }

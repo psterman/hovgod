@@ -235,6 +235,7 @@ case 289: window.open('http://www.chinashj.com/plus/search.php?kwtype=0&q='+key)
 case 290: window.open('https://m.xiachufang.com/search/?keyword='+key);break
 case 291: window.open('https://http://tool.liumingye.cn/music/?page=audioPage&type=migu&name='+key);break;
 
+
 case 300: window.open('https://www.ximalaya.com/search/'+key);break;
 case 400: window.open('https://search.dxy.cn/?recommend=true&words='+key);break;
 case 500: window.open('http://www.baidu.com/s?tn=sitesowang&word='+key);break;
@@ -280,6 +281,42 @@ $container.on('append.infiniteScroll', function( event, response, path, items ) 
 </script>
         <script src="https://file.ipadown.com/tophub/assets/js/statistics.js" type="text/javascript"></script><span style="display:none;"><script type="text/javascript" src="https://s5.cnzz.com/z_stat.php?id=1276310587&amp;web_id=1276310587"></script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?3b1e939f6e789219d8629de8a519eab9";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();
 </script></span>
+<script type="text/javascript">
+    document.addEventListener('plusready', function () {
+var webview = plus.webview.currentWebview()
+plus.key.addEventListener('backbutton', function () {
+    webview.canBack(function (e) {
+    if (e.canBack) {
+        webview.back()
+    } else {
+        // webview.close() //hide,quit
+        // plus.runtime.quit()
+        // 首页返回键处理
+        // 处理逻辑：1秒内，连续两次按返回键，则退出应用；
+        var first = null
+        plus.key.addEventListener(
+        'backbutton',
+        function () {
+            // 首次按键，提示‘再按一次退出应用’
+            if (!first) {
+            first = new Date().getTime()
+              console.log('再按一次退出应用') // 此处可以用自定义提示
+            setTimeout(function () {
+                first = null
+            }, 1000)
+            } else {
+            if (new Date().getTime() - first < 1500) {
+                plus.runtime.quit()
+            }
+            }
+        },
+        false
+        )
+    }
+    })
+})
+})
+</script>
 </head>
 <body huaban_collector_injected="true" _c_t_common="1" datasqstyle="{&quot;paddingBottom&quot;:null}" datasquuid="1f796b45-0a1d-4d75-9ae8-fcbe45c19f51"
 style="padding-bottom: 40px;">

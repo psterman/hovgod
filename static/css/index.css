@@ -33,16 +33,16 @@ header #topbody {
 	.help-tip {
 		display: none;
 	}
-	
+
 }
 @media ( max-width : 500px) {
 	#logo,#logo img {
 		height: 60px;
 	}
-	 #wrap,#topbody {
+#wrap,#topbody {
 		width: 98%;
 	}
-	
+
 	#logo {
 		margin-top: 10px;
 	}
@@ -77,12 +77,12 @@ span.domain{
 	margin-right:3px;
 }
 .submitbox  a.Highlight{
-	 color: #333;
-	 color: #333 !important;
+	color: #333;
+	color: #333 !important;
 }
 .submitbox  a.Highlight  span.domain{
-	 background-image: url(../images/icons_20191009_h.png);
-	 color: #333;
+	background-image: url(../images/icons_20191009_h.png);
+	color: #333;
 }
 span.all {
     background-position: -176px -78px;
@@ -228,7 +228,7 @@ span.my {
 
 }
 @media ( max-width : 320px) {
- 
+
 	span.domain {
 		display:none;
 	}
@@ -243,7 +243,7 @@ span.my {
     top: -18px;
     right: 2px;
     text-align: center;
-    background-color: #329DD2; 
+    background-color: #329DD2;
     border-radius: 50%;
     width: 16px;
     height: 16px;
@@ -300,4 +300,10 @@ span.my {
 	position: absolute;
 	top:-40px;
 	left:0;
+}
+a:active {
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: underline;
 }

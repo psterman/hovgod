@@ -201,7 +201,6 @@ header .logo a {
 	text-decoration: none;
 	font-weight: normal;
 	white-space: nowrap
-	
 }
 .footer.mini,.footer.mini a,.footer.mini p {
     color: #333 !important;
@@ -361,24 +360,30 @@ ul.childrennav {
 		width:100px;
 		min-width: 100px;
 	}
-	
+
 	.brothernav li {
 		font-size: 16px;
 		padding: 0;
 	}
-	
+
 	.brothernav li a {
 		padding: 0 10px;
 	}
-	
+
 	.positionnav li {
 		font-size: 16px
 	}
-	
+
 	.childrennav li {
 		padding: 5px
 	}
 	.childrenbox {
 	font-size: 14px
 	}
+}
+a:active {
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: underline;
 }

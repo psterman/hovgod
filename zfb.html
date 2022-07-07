@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../font/download/font_3428798_vosj3usz8y/iconfont.css">
     <style>
         *{
             margin: 0;
             padding: 0;
         }
         .box{
-            width: 950px;
-            height: 1422px;
+            width: auto;
+            height: auto;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -21,22 +20,22 @@
         /* header设置 */
         .box header{
             background-color: #242a3a;
-            height: 125px;
+            height: 8px;
             display: flex;
         }
- 
+
         header span{
-            width: 125px;
+            width: 12px;
             height: 125px;
-            line-height: 125px;
+            line-height: px;
             text-align: center;
-            font-size: 48px!important;
-            color: white;
+            font-size: 40px!important;
+            color: rgb(233, 0, 0);
  
         }
         header p{
             flex: 1;
-            font-size: 40px;
+            font-size: 20px;
             color: white;
             line-height: 125px;
             
@@ -44,8 +43,7 @@
         /* 一般来说，行内元素无法设置宽高，但是只要提前加了弹性盒样式，就可以进行宽高的设置了
         如果发现无法设置样式，不妨加个display：flex；添加弹性盒试试看
         */
- 
- 
+
         /* 因为主轴是交叉轴（即纵轴，也称侧轴），所以宽度不用再进行设置，只需要设置高度即可
         换种解释：因为主轴是交叉轴，所以在不设置宽度的情况下，它会根据外面的父盒子进行自适应匹配
         */
@@ -55,12 +53,10 @@
             flex: 1;
         }
  
- 
-        
       
         .top{
           display: flex;
-          height: 285px;
+          height: 200px;
           background-color: #242a3a;
           justify-content: space-around;
           align-items: center;
@@ -93,7 +89,7 @@
       }
  
     .list div{
-         width: 25%;
+         width: 33.3%;
          height: 208px;
          border: 1px solid #ebebeb;
          box-sizing: border-box;

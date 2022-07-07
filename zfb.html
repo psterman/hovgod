@@ -1,386 +1,273 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好物good官网</title>
+    <link rel="stylesheet" href="../font/download/font_3428798_vosj3usz8y/iconfont.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 950px;
+            height: 1422px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        /* header设置 */
+        .box header{
+            background-color: #242a3a;
+            height: 125px;
+            display: flex;
+        }
+        header span{
+            width: 125px;
+            height: 125px;
+            line-height: 125px;
+            text-align: center;
+            font-size: 48px!important;
+            color: white;
+        }
+        header p{
+            flex: 1;
+            font-size: 40px;
+            color: white;
+            line-height: 125px;
+        }
+        /* 一般来说，行内元素无法设置宽高，但是只要提前加了弹性盒样式，就可以进行宽高的设置了
+        如果发现无法设置样式，不妨加个display：flex；添加弹性盒试试看
+        */
+        /* 因为主轴是交叉轴（即纵轴，也称侧轴），所以宽度不用再进行设置，只需要设置高度即可
+        换种解释：因为主轴是交叉轴，所以在不设置宽度的情况下，它会根据外面的父盒子进行自适应匹配
+        */
+        /* section设置 */
+        .box section{
+            /* background-color: grey; */
+            flex: 1;
+        }
+        .top{
+        display: flex;
+        height: 285px;
+        background-color: #242a3a;
+        justify-content: space-around;
+        align-items: center;
+          /* 将弹性<div> 元素的所有项目居中对齐 */
+    }
+    .top div{
+        width: 108px;
+        height: 165px;
+        background-color: #242a3a;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .top span{
+        font-size:104px;
+        color: white;
+    }
+    .top p{
+        color: white;
+        font-size: 32px;
+        text-align: center;
+    }
+    .list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+          /* 自动换行 */
+        border-color: white;
+    }
+    .list div{
+        width: 25%;
+        height: 250px;
+        border: 1px solid #ebebeb;
+        box-sizing: border-box;
+         /* 设置怪异盒模型 */
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+         /* 只能在父盒子中设置，设置在项目中无效 */
+    }
+    .list div span{
+        height: 69px;
+        text-align: center;
+        line-height: 63px;
+        font-size: 57px;
+    }
+    .list div p{
+        height: 63px;
+        text-align: center;
+        line-height: 3px;
+        font-size: 30px;
+    }
+    .list.bottom{
+        margin-top: 26px;
+    }
+    .list img{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+      /* footer设置 */
+    .box footer{
+        background-color: #fafbfd;
+        display: flex;
+        height: 125px;
+    }
+    .box footer div{
+        flex: 1;
+        flex-direction: column;
+        display: flex;
+
+    .box footer div span{
+        height: 75px;
+        line-height: 75px;
+        text-align: center;
+        font-size: 60px;
+    }
+    .box footer div p{
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .box footer div:hover{
+        color:#01abdf;
+    }
+.leftmargin
+{
+margin-left: 25%;
+}
+</style>
 <style>
-* {
-		margin: 0;
-		padding: 0;
-		-webkit-font-smoothing: antialiased;
-		font-weight: 200;
-		line-height: 1em;
-		color:#bbb;
-		font-family: segoe ui, helvetica neue, helvetica, arial, sans-serif;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		-moz-box-sizing: border-box;
-	}
-	body{
-  		background-color:#919798;
-	}
-	.lumia_620{
-		margin: 5% auto;
-		width: 300px;
-		height: 525px;
-		background-color: #333;
-		border-radius: 40px;
-		box-shadow: 0px 0px 0px 1px #3C3C3C,0px 0px 0px 3px #000,0px 0px 0px 8px #1ba1e2,0px 0px 0px 11px #3B3D55;
-		overflow:hidden;
-	}
-	.tiles_container{
-		width: 100%;
-		height: 410px;
-		margin: 0px auto;
-		overflow: auto;
-		border-left: 10px solid #000;
-		border-right: 10px solid #000;
-	}
-	div[class^="tile-"]{
-		text-align: center;
-		float: left;
-	}
-	div[class^="tile-"] i{
-		margin-top: 10px;
-		color: #fff;
-		display: block;
-	}
-	div[class^="tile-"] span{
-		display: block;
-		float: left;
-		color: #fff;
-		margin-left: 5px;
-		margin-top: 15px;
-		font-size: 12px;
-	}
-	.tile-1{
-		margin-top: 20px;
-	}
-	.tile-1,.tile-12,.tile-21{
-		width: 100%;
-		height: 105px;
-		background-color: #1ba1e2;
-		overflow: hidden;
-	}
-	.tile-2,.tile-7,.tile-13,.tile-14,.tile-19,.tile-20{
-		margin-top: 5px;
-		margin-right: 5px;
-		width: 122px;
-		height: 105px;
-		background-color: #1ba1e2;
-	}
-	.tile-3,.tile-8{
-		margin-top: 5px;
-		margin-right: 5px;
-		width: 59px;
-		height: 50px;
-		background-color: #1ba1e2;
-	}
-	.tile-4,.tile-9{
-		margin-top: 5px;
-		width: 59px;
-		height: 50px;
-	}
-	.tile-9{
-		background-color: #069;
-	}
-	.tile-4,.tile-12{
-		background-color: #4c66a4;
-	}
-	.tile-5,.tile-10{
-		margin-top: 5px;
-		margin-right: 5px;
-		width: 59px;
-		height: 50px;
-		background-color: #1ba1e2;
-	}
-	.tile-6,.tile-11{
-		margin-top: 5px;
-		width: 59px;
-		height: 50px;
-		background-color: #1ba1e2;
-	}
-	.tile-6{
-		background-color: orangered;
-	}
-	.tile-12{
-		margin-top: 5px;
-	}
-	.tile-13{
-		background-color: #028801;
-		background-image: url("https://i.imgur.com/iCXQb2v.jpg?1");
-		background-repeat: no-repeat;
-		background-size: 50%;
-		background-position: center;
-	}
-	.tile-14{
-		margin-right: 0px;
-		background-color: #107c0f;
-		background-image: url("https://i.imgur.com/0mxUnQZ.jpg?1");
-		background-repeat: no-repeat;
-		background-size: 38%;
-		background-position: center;
-	}
-	.tile-15,.tile-16,.tile-17,.tile-18{
-		margin-top: 5px;
-		margin-right: 5px;
-		width: 59px;
-		height: 50px;
-		background-color: #1ba1e2;
-	}
-	.tile-16{
-		background-image: url('http://static.here.sc/maps/44923/modules/download/img/icons/icon-wp-nokia-city-lens.png');
-		background-repeat: no-repeat;
-		background-position: 0px;
-	}
-	.tile-17{
-		background-image: url('http://static.here.sc/maps/44923/modules/download/img/icons/icon-wp-nokia-drive.png');
-		background-repeat: no-repeat;
-		background-position: 0px;
-	}
-	.tile-18{
-		background-image: url('http://static.here.sc/maps/44923/modules/download/img/icons/icon-wp-nokia-maps.png');
-		background-repeat: no-repeat;
-		background-position: 0px;
-	}
-	.tile-15{
-		width: 58px;
-		background-color: #38aae1;
-	}
-	.tile-18{
-		width: 58px;
-		margin-right: 0px;
-	}
-	.tile-20{
-		margin-right: 0px;
-	}
-	.tile-21{
-		background-color: #76A70A;
-		margin-top: 5px;
-		margin-bottom: 5px;
-	}
-	.tile-22{
-		width: 100%;
-		margin-bottom: 20px;
-	}
-	.tile-22 i{
-		float: right;
-		color: #fff;
-		font-size: 1.5em;
-		font-weight: 100;
-	}
-	::-webkit-scrollbar { 
-    	display: none; 
-	}
-	.tiles_container { -ms-overflow-style: none; }
-	.tiles_container { overflow: -moz-scrollbars-none; }
-	.phone_header{
-		width: 100%;
-		height: 45px;
-		background-color: #000;
-		line-height: 38px;
-	}
-	.phone_footer{
-		width: 100%;
-		height: 70px;
-		background-color: #000;
-		line-height: 70px;
-	}
-	.container{
-		width: 250px;
-		height: 100%;
-		margin: 0px auto;
-	}
-	.phone_footer i:nth-child(1){
-		margin-left:28px;
-	}
-	.phone_footer i:nth-child(2){
-		margin-left:100px;
-	}
-	.phone_footer i:nth-child(3){
-		margin-left: 94px;
-		-webkit-transform: rotate(90deg);
-	}
-	.front-cam{
-		width: 16px;
-		height: 16px;
-		background-color: #fff;
-		border-radius: 10px;
-		display: inline-block;
-		margin-left: 28px;
-		box-shadow: inset 0px 0px 0px 1px #333,inset 0px 0px 0px 4px #394F63,inset 0px 0px 0px 7px #293947;
-	}
-	.front-speaker{
-		display: inline-block;
-		width: 60px;
-		height: 8px;
-		background-color: #222;
-		border-radius: 5px;
-		margin-left:66px;
-	}
-	.brand-name{
-		background: url("http://r.nokia.com/r/26/images/layout/nokia_logo_tiny.png") no-repeat;
-		background-size: 100% 50%;
-		background-position: center;
-		height: 21px;
-		width: 55px;
-		display: inline-block;
-		margin-left: 47px;
-	}
-	img {
-		width: 110px;
-		margin-left: -42px;
-	}
-	.win-icon{
-		width: 25px !important;
-		margin-left: 90px !important;
-		position: relative;
-		top: 7px;
-	}
-	#txt{
-		font-size: 0.6em;
-		font-weight: bold;
-		position: relative;
-		top: -9px;
-		left: 190px;
-	}
-	.main-img{
-		width:250px;
-		margin-left:0px;
-		/* Chrome, Safari, Opera */
-		-webkit-animation-name: myfirst;
-		-webkit-animation-duration: 30s;
-		-webkit-animation-timing-function: linear;
-		-webkit-animation-iteration-count: infinite;
-		-webkit-animation-direction: alternate;
-		-webkit-animation-play-state: running;
-		/* Standard syntax */
-		animation-name: myfirst;
-		animation-duration: 30s;
-		animation-timing-function: linear;
-		animation-iteration-count: infinite;
-		animation-direction: alternate;
-		animation-play-state: running;
-	}
-	@-webkit-keyframes myfirst
-	{
-		0%{
-			-webkit-transform: translateY(0px);
-		}
-		10%{
-			-webkit-transform: translateY(-28px);
-		}
-		20%{
-			-webkit-transform: translateY(-28px);
-		}
-		30%{
-			-webkit-transform: translateY(-68px);
-		}
-		40%{
-			-webkit-transform: translateY(-88px);
-		}
-		50%{
-			-webkit-transform: translateY(-108px);
-		}
-		60%{
-			-webkit-transform: translateY(-128px);
-		}
-		70%{
-			-webkit-transform: translateY(-148px);
-		}
-		80%{
-			-webkit-transform: translateY(-168px);
-		}
-		90%{
-			-webkit-transform: translateY(-188px);
-		}
-		100%{
-			-webkit-transform: translateY(-208px);
-		}
-	}</style>
+.box1:hover{
+    color:blue;
+}
+.box1:active{
+	text-decoration:underline;
+}
+.box1{
+    color: black;
+    text-decoration:none;
+}
+</style>
 </head>
-<body onload="startTime()">
-	<div class="lumia_620">
-		<div class="phone_header">
-			<div class="front-cam"></div>
-			<div class="front-speaker"></div>
-			<div class="brand-name">&nbsp;</div>
-		</div>
-		<div class="tiles_container">
-			<div>
-				<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiICB4bWw6c3BhY2U9InByZXNlcnZlIj7vu788cGF0aCBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZS13aWR0aD0iMC4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNIDQxLDM1TCA0MSw1N0wgMzUsNTdMIDM1LDM1TCA0MSwzNSBaIE0gMzMsNDRMIDMzLDU3TCAyNyw1N0wgMjcsNDRMIDMzLDQ0IFogTSAxOSw1N0wgMTksNTFMIDI1LDUxTCAyNSw1N0wgMTksNTcgWiBNIDQ5LDI3TCA0OSw1N0wgNDMsNTdMIDQzLDI3TCA0OSwyNyBaICI+PC9wYXRoPgk8cGF0aCBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuNDAzOTIyIiBzdHJva2Utd2lkdGg9IjAuMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTSA1NywxOUwgNTcsNTdMIDUxLDU3TCA1MSwxOUwgNTcsMTkgWiAiPjwvcGF0aD48L3N2Zz4=" style="width: 25px;margin-left: 0;">
-				<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiPu+7vzxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTSA0MCwzOEwgNDAsNDhMIDM2LDQ4TCAzNiwzOEwgMzQsMzhDIDMyLjM0MzEsMzggMzEsMzYuNjU2OSAzMSwzNUwgMzEsMjhMIDM0LDI4TCAzNCwyNEwgMzcsMjRMIDM3LDI4TCAzOSwyOEwgMzksMjRMIDQyLDI0TCA0MiwyOEwgNDUsMjhMIDQ1LDM1QyA0NSwzNi42NTY5IDQzLjY1NjgsMzggNDIsMzhMIDQwLDM4IFogTSA1OSwzNEwgNTksNDJMIDU2LDQyTCA1Niw0OEwgNDEsNDhMIDQxLDQ0TCA1Miw0NEwgNTIsMzJMIDQ2LDMyTCA0NiwyOEwgNTYsMjhMIDU2LDM0TCA1OSwzNCBaIE0gMjQsMzJMIDI0LDQ0TCAzNSw0NEwgMzUsNDhMIDIwLDQ4TCAyMCwyOEwgMzAsMjhMIDMwLDMyTCAyNCwzMiBaICI+PC9wYXRoPjwvc3ZnPg==" style="width: 25px;margin-left: 0;position:relative;left:195px;">
-				<span id="txt"></span>
-			</div>
-			<div class="container">
-				<div class="tile-1">
-					<img src="http://lorempixel.com/400/500/" class="main-img">
-				</div>
-				<div class="tile-2">
-					<i class="fa fa-phone fa-4x"></i>
-					<span>Phone</span>
-				</div>
-				<div class="tile-3">
-					<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzMCAxNjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDE2MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+77u/PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIiBzdHJva2Utd2lkdGg9IjAuMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTSAxOSwyNUwgNTcsMjVMIDM4LDM4TCAxOSwyNSBaIE0gMzgsNDIuNzVMIDU3LDMwTCA1Nyw1MUwgMTksNTFMIDE5LDMwTCAzOCw0Mi43NSBaICI+PC9wYXRoPjwvc3ZnPg==">
-				</div>
-				<div class="tile-4">
-					<i class="fa fa-instagram" style="font-size:1.6em;margin-top:12px;"></i>
-				</div>
-				<div class="tile-5">
-					<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzMCAxNjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDE2MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQoJ77u/PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNIDQ5LDU3LjI1TCAyMSw1MS43NUwgMjEsMzAuNzVMIDQ5LDI1TCA1NSwyN0wgNTUsNTVMIDQ5LDU3LjI1IFogTSAyNywzNS41TCAyNyw0MEwgMzMsNDBMIDMzLDM0LjZMIDI3LDM1LjUgWiBNIDMzLDQ3LjE1TCAzMyw0MUwgMjcsNDFMIDI3LDQ2LjI1TCAzMyw0Ny4xNSBaIE0gNDIsMzMuMjVMIDM0LDM0LjQ1TCAzNCw0MEwgNDIsNDBMIDQyLDMzLjI1IFogTSA0Miw0OC41TCA0Miw0MUwgMzQsNDFMIDM0LDQ3LjNMIDQyLDQ4LjUgWiBNIDQxLDIwLjE1NjNDIDQyLjY1NjgsMTkuNjkwMyA0NSwyMC40MDU3IDQ1LDIyLjA2MjVMIDQ0Ljk5OTksMjQuODIxNUwgNDIuOTk5OSwyNS4yODU3TCA0Mi45OTk5LDIzLjU5MzhDIDQyLjk5OTksMjIuNDg5MyA0Mi4xMDQ1LDIxLjg0NTcgNDEsMjIuMTU2M0wgMzkuOTk5NSwyMi40NjlMIDQwLjAwMDEsMjUuODkyOUwgMzguMDAwMSwyNi4zNTcxTCAzNy45OTk1LDIzLjI1MDJDIDM2Ljg5NTIsMjMuNTYxIDM2LDIzLjcwODIgMzYsMjQuODEyNkwgMzYsMjYuNzg1N0wgMzQsMjcuMjVMIDM0LDI0LjM0MzhDIDM0LDIyLjY4NzIgMzYuMzQyOCwyMS43MTY0IDM3Ljk5OTQsMjEuMjUwMkwgMzcuOTk5MiwyMC43NzU4QyAzNy45OTkxLDE5LjY3MTMgMzcuMTAzNSwxOC45NjkzIDM1Ljk5ODksMTkuMjA3N0wgMzIuOTk4OSwxOS45NDY0QyAzMS44OTQzLDIwLjE4NDkgMzAuOTk5LDIxLjI3MzYgMzAuOTk5MSwyMi4zNzgyTCAzMSwyNy44MjE1TCAyOSwyOC4yODU3TCAyOC45OTkyLDIxLjg0NEMgMjguOTk4OSwyMC4xODcyIDMwLjM0MTksMTguNTU0MSAzMS45OTg3LDE4LjE5NjRMIDM2Ljk5ODgsMTcuMjA3OEMgMzguNjU1NiwxNi44NSAzOS45OTksMTcuOTAzMSAzOS45OTkyLDE5LjU1OTlMIDM5Ljk5OTQsMjAuNDY5TCA0MSwyMC4xNTYzIFogIj48L3BhdGg+DQo8L3N2Zz4NCg==">
-				</div>
-				<div class="tile-6">
-					<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzMCAxNjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDE2MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQoJ77u/PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIiBzdHJva2Utd2lkdGg9IjAuMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTSAyMCw1MUwgMjgsNDhMIDI4LDI3TCA0MywyM0wgNDMsNTRMIDIwLjk5OTksNTEuMjUwMUwgNDMsNTlMIDU2LDU2TCA1NiwyMEwgNDMsMTdMIDIwLDI1TCAyMCw1MSBaICI+PC9wYXRoPg0KPC9zdmc+">
-				</div>
-				<div class="tile-7">
-					<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiID7vu78NCgk8cGF0aCBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZS13aWR0aD0iMC4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNIDMzLDUxTCAzNi40MTY3LDYxLjc1TCAyNCw1MUwgMTksNTFMIDE5LDIyTCA1NywyMkwgNTcsNTFMIDMzLDUxIFogTSA0NC43MjQ0LDQ1LjM2MDlDIDQ1LjI0NTgsNDQuNzc2IDQ1Ljc1MzMsNDQuMDk3OCA0Ni4yNDcxLDQzLjMyNjNMIDQ3LjU1MDYsNDAuOTczOUwgNDguNDUzNCwzOC42MzQxQyA0OC42ODAyLDM3Ljg3MTEgNDguNzkzNiwzNy4xOTcyIDQ4Ljc5MzYsMzYuNjEyMkMgNDguNzkzNiwzNi4wMjczIDQ4LjY4MDIsMzUuMzUzMyA0OC40NTM0LDM0LjU5MDRMIDQ3LjU1MDYsMzIuMjM3OUwgNDYuMjQ3MSwyOS44ODU0TCA0NC43MjQ0LDI3Ljg2MzVMIDQyLjY4OTgsMjcuODYzNUMgNDMuNzYyMiwyOS4wOTcgNDQuNTcyOSwzMC40MjQ4IDQ1LjEyMTgsMzEuODQ2OUMgNDUuNjcwNywzMy4yNjg5IDQ1Ljk0NTEsMzQuODU3NCA0NS45NDUxLDM2LjYxMjJDIDQ1Ljk0NTEsMzguMzU0MyA0NS42NzA3LDM5LjkzNTQgNDUuMTIxOCw0MS4zNTU0QyA0NC41NzI5LDQyLjc3NTMgNDMuNzYyMiw0NC4xMTA1IDQyLjY4OTgsNDUuMzYwOUwgNDQuNzI0NCw0NS4zNjA5IFogTSAzNi4wMjA4LDM0LjgzMzRDIDM1LjE0NjQsMzQuODMzNCAzNC40Mzc1LDM1LjU0MjIgMzQuNDM3NSwzNi40MTY3QyAzNC40Mzc1LDM3LjI5MTEgMzUuMTQ2NCwzOCAzNi4wMjA4LDM4TCAzOS4xODc1LDM4QyA0MC4wNjE5LDM4IDQxLjU2MjUsMzcuMjkxMSA0MS41NjI1LDM2LjQxNjdDIDQxLjU2MjUsMzUuNTQyMiA0MC4wNjE5LDM0LjgzMzQgMzkuMTg3NSwzNC44MzM0TCAzNi4wMjA4LDM0LjgzMzQgWiBNIDI5LjI5MTcsMzAuMDgzNEMgMjguNDE3MiwzMC4wODM0IDI3LjcwODMsMzAuNzkyMiAyNy43MDgzLDMxLjY2NjdDIDI3LjcwODMsMzIuNTQxMSAyOC40MTcyLDMyLjg1NDIgMjkuMjkxNywzMi44NTQyTCAzMC44NzUsMzIuODU0MkMgMzEuNzQ5NCwzMi44NTQyIDMyLjQ1ODMsMzIuNTQxMSAzMi40NTgzLDMxLjY2NjdDIDMyLjQ1ODMsMzAuNzkyMiAzMS43NDk0LDMwLjA4MzQgMzAuODc1LDMwLjA4MzRMIDI5LjI5MTcsMzAuMDgzNCBaIE0gMjkuMjkxNywzOS45NzkyQyAyOC40MTcyLDM5Ljk3OTIgMjcuNzA4Myw0MC4yOTIyIDI3LjcwODMsNDEuMTY2N0MgMjcuNzA4Myw0Mi4wNDExIDI4LjQxNzIsNDIuNzUgMjkuMjkxNyw0Mi43NUwgMzAuODc1LDQyLjc1QyAzMS43NDk0LDQyLjc1IDMyLjQ1ODMsNDIuMDQxMSAzMi40NTgzLDQxLjE2NjdDIDMyLjQ1ODMsNDAuMjkyMiAzMS43NDk0LDM5Ljk3OTIgMzAuODc1LDM5Ljk3OTJMIDI5LjI5MTcsMzkuOTc5MiBaICI+PC9wYXRoPjwvc3ZnPg==" style="width: 85px;margin-left: 0px;">
-					<span style="margin-top:0px;">Messaging</span>
-				</div>
-				<div class="tile-8">
-					<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAzMCAxNjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMwIDE2MCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQoJ77u/PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIxIiBzdHJva2Utd2lkdGg9IjAuMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTSA0MC4zNzUsMTlDIDQxLjMxMzIsMTkgNDIuMjM0NywxOS4wNzEgNDMuMTM0NywxOS4yMDc4QyA0OC4zOTIxLDE2Ljk0NjYgNTIuOTU4NSwxNi43NjkxIDU1LjQwMzgsMTkuMjE0NEMgNTcuMzk2NiwyMS4yMDcyIDU3LjY0NzQsMjQuNjA4OCA1Ni40NDgxLDI4LjY0NTFDIDU3LjgxMDgsMzEuMTk3NiA1OC41ODMzLDM0LjExMjcgNTguNTgzMywzNy4yMDgzTCA1OC40Mjk5LDM5LjU4MzNMIDQ4Ljk2MjksMzkuNTgzM0wgNDQuMzMzMywzOS41ODMzTCAzMS43ODcxLDM5LjU4MzNDIDMyLjQ3OCw0NC4wNzY0IDM2LjA2LDQ3LjUgNDAuMzc1LDQ3LjVDIDQzLjU5ODMsNDcuNSA0Ni40MTI2LDQ1LjU4OTYgNDcuOTE4Myw0Mi43NUwgNTcuNzI0Nyw0Mi43NUMgNTUuMzgwMiw1MC4wOTY0IDQ4LjQ5ODksNTUuNDE2NyA0MC4zNzUsNTUuNDE2N0MgMzguMDg5LDU1LjQxNjcgMzUuOTAxMyw1NC45OTU0IDMzLjg4NTUsNTQuMjI2MkMgMjcuNjY2NCw1Ny40OTkxIDIyLjA4MDksNTguMTQgMTkuMjc5NSw1NS4zMzg2QyAxNC43NjQ2LDUwLjgyMzcgMTkuMTkxMiwzOS4wNzY5IDI5LjE2NjYsMjkuMTAxNEwgMzEuMjI2LDI3LjE0MjFDIDI4LjE4NDUsMjguNzMzIDI1LjE2LDMxLjAzNzcgMjIuNTAzNCwzMy43MDUxQyAyNC4xMzY1LDI1LjMyNTEgMzEuNTE3MSwxOSA0MC4zNzUsMTkgWiBNIDQwLjM3NSwyOC41QyAzNi41ODMzLDI4LjUgMzMuMzU3NywzMS4xNDM2IDMyLjE2MjIsMzQuODMzM0wgNDguNTg3OCwzNC44MzMzQyA0Ny4zOTIzLDMxLjE0MzYgNDQuMTY2NiwyOC41IDQwLjM3NSwyOC41IFogTSA1NC4zMTEyLDIxLjY4MTdDIDUzLjAxMDYsMjAuMzgxMSA1MC44NDQsMjAuMTI1MSA0OC4xODMsMjAuNzU0NEMgNTEuMTA3NCwyMi4xNDQ2IDUzLjYwMjUsMjQuMjkxNSA1NS40MTUyLDI2Ljk0MkMgNTUuNzk4LDI0LjY3ODMgNTUuNDY3MywyMi44Mzc4IDU0LjMxMTIsMjEuNjgxNyBaIE0gMjEuODQzMiw1NC4xNDk3QyAyMy43ODg3LDU2LjA5NTEgMjcuNjcxOSw1NS43MDM0IDMyLjI0ODksNTMuNTA3M0MgMjcuODc1NSw1MS4zMjI2IDI0LjUwNDQsNDcuNDI5NSAyMy4wMTAyLDQyLjcwMjVDIDIwLjM2MTUsNDcuNzI3MyAxOS43NTE4LDUyLjA1ODIgMjEuODQzMiw1NC4xNDk3IFogIj48L3BhdGg+DQo8L3N2Zz4=">
-				</div>
-				<div class="tile-9">
-					<i class="fa fa-linkedin-square" style="font-size:1.6em;margin-top:12px;"></i>
-				</div>
-				<div class="tile-10">
-					<i class="fa fa-twitter" style="font-size:1.6em;margin-top:12px;"></i>
-				</div>
-				<div class="tile-11">
-					<i class="fa fa-skype" style="font-size:1.6em;margin-top:12px;"></i>
-				</div>
-				<div class="tile-12">
-					<i class="fa fa-facebook-square fa-4x"></i>
-					<span>Facebook</span>
-				</div>
-				<div class="tile-13">
-					<span style="margin-top: 89px;">Games</span>
-				</div>
-				<div class="tile-14">
-					<span style="margin-top: 89px;">Music+Videos</span>
-				</div>
-				<div class="tile-15">
-					<i class="fa fa-foursquare" style="font-size:1.6em;margin-top:12px;"></i>
-				</div>
-				<div class="tile-16"></div>
-				<div class="tile-17"></div>
-				<div class="tile-18"></div>
-				<div class="tile-19">
-					<i class="fa fa-gear fa-4x"></i>
-					<span>Settings</span>
-				</div>
-				<div class="tile-20">
-					<i class="fa fa-music fa-4x"></i>
-					<span>Nokia Music</span>
-				</div>
-				<div class="tile-21">
-					<i class="fa fa-weixin fa-4x"></i>
-					<span>WeChat</span>
-				</div>
-				<div class="tile-22">
-					<i class="fa fa-arrow-circle-o-right"></i>
-				</div>
-			</div>
-		</div>
-		<div class="phone_footer">
-			<i class="fa fa-arrow-left"></i>
-			<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzZweCIgaGVpZ2h0PSI3NnB4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiICB4bWw6c3BhY2U9InByZXNlcnZlIj7vu78NCgk8cGF0aCBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjEiIHN0cm9rZS13aWR0aD0iMC4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNIDE3LDIzTCAzNCwyMC43NzM4TCAzNCwzN0wgMTcsMzdMIDE3LDIzIFogTSAzNCw1NS4yMjYyTCAxNyw1M0wgMTcsMzlMIDM0LDM5TCAzNCw1NS4yMjYyIFogTSA1OSwxNy41TCA1OSwzN0wgMzYsMzdMIDM2LDIwLjUxMTlMIDU5LDE3LjUgWiBNIDU5LDU4LjVMIDM2LDU1LjQ4ODFMIDM2LDM5TCA1OSwzOUwgNTksNTguNSBaICI+PC9wYXRoPg0KPC9zdmc+" class="win-icon">
-			<i class="fa fa-search"></i>
-		</div>
-	</div>
+<body>
+    <div class="box">
+        <div class="box" > <header>
+        <span><a class="box1"  href="https://hovgood.gitee.io/zfb" >
+                <p>首页</p></a>
+</span>
+            </header>
+            <section>
+                <div class="top">
+                    <div>
+                    <a  class="box1"  href="index.html" class="a"> <span><img src="\static\images\sousuo.png" width="90px" ></span>
+                        <p>搜索</p></a>
+                    </div>
+                    <div>
+                    <a class="box1" href="https://hovgood.gitee.io/dy"><span> <img src="\static\images\dianying.png" width="110px"></span> <p>观影</p></a>
+                    </div>
+
+                    <div>
+                    <a class="box1"  href="https://hovgood.gitee.io/book2"><span><img src="\static\images\shu.png" width="110px"></span>
+                        <p>找书</p></a>
+                    </div>
+                    <div>
+                        <a  class="box1"  href="https://hovgood.gitee.io/music2">
+                    <span> <img src="\static\images\music.png" width="110px"></span>
+                        <p>听歌</p></a>
+                    </div>
+                </div>
+                <div class="list" >
+                <div>
+    <span  class="leftmargin">  <a  class="box1"  href="disk2.html"> <img src="\static\images\yunpan.png"  width="60px">
+                <p>网盘搜索</p></a></span>
+                </div>
+
+        <div><span  class="leftmargin"> <a class="box1"  href="index.html
+            "><img src="\static\images\dianshiji.png"  width="60px">
+                <p>微信观影</p></a> </span>
+                </div>
+
+<div><span  class="leftmargin"> <a class="box1"  href="book2.html
+            "><img src="\static\images\diantai.png"  width="60px">
+                <p>听书广播</p></a>
+            </span>
+                </div>
+<div><span  class="leftmargin"> <a class="box1"  href="dm.html
+            "><img src="\static\images\dongman.png"  width="60px"><p>动漫追番</p></a>
+</span>
+                </div>
+
+            <div><span  class="leftmargin"><a class="box1"  href="sq.html
+            "><img src="\static\images\tongqian.png"  width="60px">
+                <p>购物省钱</p></a>
+</span>
+</div>
+
+<div><span  class="leftmargin"><a class="box1"  href="sq.html
+            "><img src="\static\images\fang.png"  width="60px">
+                    <p>装修搜索</p></a>
+            </span>   </div>
+
+<div><span  class="leftmargin"><a class="box1"  href="zq2.html
+            "><img src="\static\images\qiandai.png"  width="60px">
+                <p>理财引擎</p></a>
+                </span>
+                </div>
+<div><span  class="leftmargin"><a class="box1"  href="sq.html
+            "><img src="\static\images\haoping.png"  width="60px">
+                    <p>百宝箱</p></a>
+</span>
+</div>
+    <div><span  class="leftmargin"><a class="box1"  href="sq.html
+            "><img src="\static\images\yisheng.png"  width="60px">
+                    <p>疫情动态</p></a>
+</span>
+                <!-- </div>
+<div><span  class="leftmargin"><a class="box1"  href="sq.html
+            "><img src="\static\images\shou.png"  width="65px">
+                <p>办公学习</p></a>
+</span>               </div>
+        <div><span  class="leftmargin"><a class="box1"  href="sq.html
+            "><img src="\static\images\qiandai.png"  width="60px">
+                    <p>查病问医</p></a>
+</span>               </div>
+
+
+<div><span  class="leftmargin"><a class="box1"  href="sq.html
+            "><img src="\static\images\dianzan.png"  width="55px">
+                    <p>老人专用</p></a>
+                    </span>
+                </div> -->
+                </div>
+            </section>
+
+            <footer>
+                <!-- <div><span class="iconfont icon-zhifubao"></span>
+                <p>支付宝</p>
+                </div>
+                <div>
+                <span class="iconfont icon-koubei"></span>
+                <p>口碑</p>
+                </div>
+
+                <div>
+                <span class="iconfont icon-pengyou"></span>
+                <p>朋友</p>
+                </div>
+
+                <div>
+                    <span class="iconfont icon-wode"></span>
+                    <p>我的</p>
+                </div>
+-->
+            </footer>
+        </div>
+    </div>
 </body>
+</html>
